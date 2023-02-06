@@ -4,7 +4,8 @@ ENV SCRUMBLR_PORT="8080"
 ENV SCRUMBLR_REDIS_URL="redis://redis"
 ENV SCRUMBLR_REDIS_PORT="6379"
 
-RUN cd /tmp \
+RUN apk add redis \
+    && cd /tmp \
     && wget https://github.com/aliasaria/scrumblr/archive/master.zip \
     && unzip master.zip \
     && rm master.zip \
